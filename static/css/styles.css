@@ -1,0 +1,21 @@
+@import 'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css';
+
+#word-cloud {
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+
+.like-button {
+    cursor: pointer;
+}
+
+.like-button rect {
+    rx: 5;
+    ry: 5;
+}
+
+.like-button text {
+    font-size: 12px;
+    font-weight: bold;
+}

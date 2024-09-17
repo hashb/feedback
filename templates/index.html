@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="text-3xl font-bold mb-8">Anonymous Comments</h1>
+
+<form id="comment-form" class="mb-8">
+    {{ form.csrf_token }}
+    <div class="mb-4">
+        <label for="{{ form.text.id }}" class="block text-gray-700 font-bold mb-2">Comment</label>
+        {{ form.text(class="w-full px-3 py-2 text-gray-700 border rounded-lg focus:outline-none", maxlength="140", placeholder="Enter your comment (max 140 characters)") }}
+    </div>
+    <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">
+        Submit Comment
+    </button>
+</form>
+
+<div id="word-cloud" class="w-full h-96"></div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://d3js.org/d3.v5.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3-cloud/1.2.5/d3.layout.cloud.min.js"></script>
+{% endblock %}
